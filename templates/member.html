@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <title>Личная карточка</title>
+       </head>
+	 <body>
+		<h1>{{ name|random }}</h1>
+		<img src="{{url_for('static', filename=file|random)}}" alt="...">
+		
+		<h3>{{ jobs }}</h3>
+       </body>
+</html>

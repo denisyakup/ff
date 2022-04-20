@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>Размещение в каюте</h1>
+{% set user_list = ['Ридли Скотт', 'Энди Уир', 'Марк Уотни', 'Венкаьа Капур', 'Тедди Сандерс', 'Шон Бин']%}
+<ul>
+    {% for user in user_list %}
+    <li>{{ user }} - Каюта №{{ loop.index }} {% if loop.first %} - капитан корабля. {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+</body>
+</html>

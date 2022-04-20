@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+       <html lang="en">
+       <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                    <link rel="stylesheet" 
+                    href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" 
+                    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" 
+                    crossorigin="anonymous">
+            <title>Личная каюта</title>
+       </head>
+	 <body>
+	<table width="95%">
+<tr>
+<td bgcolor="#808080">Цвет</td>
+<td bgcolor="#808080">Аватар</td>
+</tr>
+<tr>
+{% if male == 'male' %}
+	{% if age < 21 %}
+	<td bgcolor="#CCCC33"></td>
+	{% else %}
+	<td bgcolor="#00008b"></td>
+	{% endif %}
+{% elif male == 'female' %}
+	{% if age < 21 %}
+	<td bgcolor="#ff0000"></td>
+	{% else %}
+	<td bgcolor="#ffc0cb"></td>
+	{% endif %}
+{% endif %}
+<td bgcolor="#CCCCFF"> {% if male='male' and age < 21 %}
+				<img src="{{url_for('static', filename='img/ava_male_1.png')}}" alt="...">
+				{% elif male='male' and age > 20 %}
+				<img src='{{url_for('static', filename='img/ava_male_2.png')}}' alt='...'>
+				{% elif male='female' and age < 21 %}
+				<img src='{{url_for('static', filename='img/ava_female_1.png')}}' alt='...'>
+				{% elif male="female" and age > 20 %}
+				<img src='{{url_for('static', filename='img/ava_female_2.png')}}' alt='...'>
+				{% endif %}
+
+</td>
+</tr>
+</table>
+
+       </body>
+</html>
